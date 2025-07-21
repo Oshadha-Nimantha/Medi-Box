@@ -60,7 +60,7 @@ Connect the components to the ESP32 according to the pin definitions in the code
 | OLED SDA       |    21     |
 | OLED SCL       |    22     |
 
-![Wiring Diagram](img/wiring.jpg)
+![Wiring Diagram](img/wiring.png)
 ---
 
 ## Setup and Installation
