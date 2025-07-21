@@ -1,0 +1,736 @@
+[
+    {
+        "id": "f8cb56f01a9e76b4",
+        "type": "tab",
+        "label": "Smart Medibox",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "temp_in",
+        "type": "mqtt in",
+        "z": "f8cb56f01a9e76b4",
+        "name": "Temperature",
+        "topic": "medibox/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8eb192a01c81b93a",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "temp_gauge",
+                "57826291e208c0bf"
+            ]
+        ]
+    },
+    {
+        "id": "temp_gauge",
+        "type": "ui_gauge",
+        "z": "f8cb56f01a9e76b4",
+        "name": "Temperature Gauge",
+        "group": "6c244ab14ceb131a",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Temperature (°C)",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "10",
+        "max": 50,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 500,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "57826291e208c0bf",
+        "type": "ui_chart",
+        "z": "f8cb56f01a9e76b4",
+        "name": "",
+        "group": "6c244ab14ceb131a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 450,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "77d35e561f829ad0",
+        "type": "mqtt in",
+        "z": "f8cb56f01a9e76b4",
+        "name": "Humidity",
+        "topic": "medibox/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8eb192a01c81b93a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "2a4c27529bcabde1",
+                "73feac7feff6f2f1"
+            ]
+        ]
+    },
+    {
+        "id": "2a4c27529bcabde1",
+        "type": "ui_gauge",
+        "z": "f8cb56f01a9e76b4",
+        "name": "Humidity Gauge",
+        "group": "7d82643f4f90b326",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity (%)",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 480,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "73feac7feff6f2f1",
+        "type": "ui_chart",
+        "z": "f8cb56f01a9e76b4",
+        "name": "",
+        "group": "7d82643f4f90b326",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 450,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "31cc83cff08b73f8",
+        "type": "mqtt in",
+        "z": "f8cb56f01a9e76b4",
+        "name": "Light Intensity",
+        "topic": "medibox/ldr",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8eb192a01c81b93a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 520,
+        "wires": [
+            [
+                "90a2b4dbb0693803",
+                "9618ae681cea5ee2"
+            ]
+        ]
+    },
+    {
+        "id": "90a2b4dbb0693803",
+        "type": "ui_gauge",
+        "z": "f8cb56f01a9e76b4",
+        "name": "Light Intensity Gauge",
+        "group": "56cd481d63b72902",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Intensity",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 500,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "9618ae681cea5ee2",
+        "type": "ui_chart",
+        "z": "f8cb56f01a9e76b4",
+        "name": "",
+        "group": "56cd481d63b72902",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 450,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3931f6e5105d5ed6",
+        "type": "inject",
+        "z": "f8cb56f01a9e76b4",
+        "name": "default",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "30",
+        "payloadType": "str",
+        "x": 160,
+        "y": 680,
+        "wires": [
+            [
+                "57fed2d37fc80330"
+            ]
+        ]
+    },
+    {
+        "id": "008a376fa264f2f0",
+        "type": "inject",
+        "z": "f8cb56f01a9e76b4",
+        "name": "default",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0.75",
+        "payloadType": "str",
+        "x": 160,
+        "y": 760,
+        "wires": [
+            [
+                "1215e3ad1a2c976e"
+            ]
+        ]
+    },
+    {
+        "id": "a7cbd09415477398",
+        "type": "inject",
+        "z": "f8cb56f01a9e76b4",
+        "name": "default",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "30",
+        "payloadType": "str",
+        "x": 160,
+        "y": 840,
+        "wires": [
+            [
+                "17ab679bdc73dd63"
+            ]
+        ]
+    },
+    {
+        "id": "95867ecd8ee494c4",
+        "type": "inject",
+        "z": "f8cb56f01a9e76b4",
+        "name": "default",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "5",
+        "payloadType": "str",
+        "x": 160,
+        "y": 1000,
+        "wires": [
+            [
+                "2b41e2a9ac639d2c"
+            ]
+        ]
+    },
+    {
+        "id": "830e955ec73143a1",
+        "type": "inject",
+        "z": "f8cb56f01a9e76b4",
+        "name": "default",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "120",
+        "payloadType": "str",
+        "x": 160,
+        "y": 1080,
+        "wires": [
+            [
+                "12313f72a0afb956"
+            ]
+        ]
+    },
+    {
+        "id": "1215e3ad1a2c976e",
+        "type": "ui_slider",
+        "z": "f8cb56f01a9e76b4",
+        "name": "",
+        "label": "Controlling Factor",
+        "tooltip": "",
+        "group": "94ac1a022da9c7a8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "1",
+        "step": "0.01",
+        "className": "",
+        "x": 430,
+        "y": 760,
+        "wires": [
+            [
+                "15bd37ca1eee27f2"
+            ]
+        ]
+    },
+    {
+        "id": "17ab679bdc73dd63",
+        "type": "ui_slider",
+        "z": "f8cb56f01a9e76b4",
+        "name": "",
+        "label": "Ideal Temp",
+        "tooltip": "",
+        "group": "94ac1a022da9c7a8",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "10",
+        "max": "40",
+        "step": 1,
+        "className": "",
+        "x": 410,
+        "y": 840,
+        "wires": [
+            [
+                "6f2a77ed62e7100d"
+            ]
+        ]
+    },
+    {
+        "id": "2b41e2a9ac639d2c",
+        "type": "ui_slider",
+        "z": "f8cb56f01a9e76b4",
+        "name": "",
+        "label": "Sampling Interval (s)",
+        "tooltip": "",
+        "group": "a63b75424315ec1d",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "1",
+        "max": "60",
+        "step": 1,
+        "className": "",
+        "x": 440,
+        "y": 1000,
+        "wires": [
+            [
+                "8b5038ad0e795c28"
+            ]
+        ]
+    },
+    {
+        "id": "12313f72a0afb956",
+        "type": "ui_slider",
+        "z": "f8cb56f01a9e76b4",
+        "name": "",
+        "label": "Sending Interval (s)",
+        "tooltip": "",
+        "group": "a63b75424315ec1d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "30",
+        "max": "600",
+        "step": "10",
+        "className": "",
+        "x": 430,
+        "y": 1080,
+        "wires": [
+            [
+                "87c0226752386205"
+            ]
+        ]
+    },
+    {
+        "id": "540c9babc8d2db69",
+        "type": "mqtt out",
+        "z": "f8cb56f01a9e76b4",
+        "name": "theta",
+        "topic": "medibox/nodeRed/theta",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8eb192a01c81b93a",
+        "x": 650,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "15bd37ca1eee27f2",
+        "type": "mqtt out",
+        "z": "f8cb56f01a9e76b4",
+        "name": "gamma",
+        "topic": "medibox/nodeRed/y",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8eb192a01c81b93a",
+        "x": 660,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "8b5038ad0e795c28",
+        "type": "mqtt out",
+        "z": "f8cb56f01a9e76b4",
+        "name": "ts",
+        "topic": "medibox/nodeRed/ts",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8eb192a01c81b93a",
+        "x": 650,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "87c0226752386205",
+        "type": "mqtt out",
+        "z": "f8cb56f01a9e76b4",
+        "name": "tu",
+        "topic": "medibox/nodeRed/tu",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8eb192a01c81b93a",
+        "x": 650,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "6f2a77ed62e7100d",
+        "type": "mqtt out",
+        "z": "f8cb56f01a9e76b4",
+        "name": "Tmed",
+        "topic": "medibox/nodeRed/itemp",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8eb192a01c81b93a",
+        "x": 650,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "57fed2d37fc80330",
+        "type": "ui_slider",
+        "z": "f8cb56f01a9e76b4",
+        "name": "",
+        "label": "Offset",
+        "tooltip": "",
+        "group": "94ac1a022da9c7a8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "120",
+        "step": "5",
+        "className": "",
+        "x": 390,
+        "y": 680,
+        "wires": [
+            [
+                "540c9babc8d2db69"
+            ]
+        ]
+    },
+    {
+        "id": "8eb192a01c81b93a",
+        "type": "mqtt-broker",
+        "name": "MQTT Broker",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6c244ab14ceb131a",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "5285bdb0b95877f9",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7d82643f4f90b326",
+        "type": "ui_group",
+        "name": "Humidity",
+        "tab": "5285bdb0b95877f9",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "56cd481d63b72902",
+        "type": "ui_group",
+        "name": "Light Intensity",
+        "tab": "5285bdb0b95877f9",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "94ac1a022da9c7a8",
+        "type": "ui_group",
+        "name": "Servo Control",
+        "tab": "5285bdb0b95877f9",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a63b75424315ec1d",
+        "type": "ui_group",
+        "name": "Intensity Control",
+        "tab": "5285bdb0b95877f9",
+        "order": 5,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5285bdb0b95877f9",
+        "type": "ui_tab",
+        "name": "Smart Medi Box",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
