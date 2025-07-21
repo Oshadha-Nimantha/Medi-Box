@@ -1,0 +1,17 @@
+# PlatformIO
+.pio
+.vscode
+
+# Arduino IDE
+*.o
+*.a
+*.elf
+*.bin
+*.hex
+build.*
+*~
+*.tmp
+
+# Secrets / Credentials - In case you add them later
+credentials.h
+secrets.h
